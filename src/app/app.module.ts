@@ -4,18 +4,18 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
-import { LoginComponent } from './login/login.component';
+import { UploadComponent } from './Upload/Upload.component';
 
 
 const appRoutes: Routes = [
-  { path: 'login', component: LoginComponent },
+  { path: 'Upload', component: UploadComponent },
   
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent,
+    UploadComponent,
   ],
   imports: [
     BrowserModule,

@@ -5,10 +5,10 @@ import { FormBuilder, FormGroup, Validators, AbstractControl, FormControl } from
 
 @Component({
   selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  templateUrl: './Upload.component.html',
+  styleUrls: ['./Upload.component.scss']
 })
-export class LoginComponent implements OnInit {
+export class UploadComponent implements OnInit {
   registerForm : FormGroup;
   isDisabled : boolean;
   fileToUpload: File = null;
