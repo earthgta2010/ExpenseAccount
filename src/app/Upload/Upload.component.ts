@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {FirebaseService, } from '../firebase.service'
 import { from } from 'rxjs';
 import { FormBuilder, FormGroup, Validators, AbstractControl, FormControl } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -14,6 +15,7 @@ export class UploadComponent implements OnInit {
   fileToUpload: File = null;
   progess : number;
   picturePath : string;
+  Pictures = [];
  get password(): AbstractControl {
     return this.registerForm.get('password');
   }
@@ -23,7 +25,8 @@ export class UploadComponent implements OnInit {
   }
 
   constructor(public FS : FirebaseService,
-              public FB : FormBuilder) {this.isDisabled = true}
+              public FB : FormBuilder,
+              ) {this.isDisabled = true}
   ngOnInit() {
 
     this.registerForm = this.FB.group({
@@ -32,7 +35,12 @@ export class UploadComponent implements OnInit {
       Picture : [null],
       // Status : [""]
     });
-    
+     this.FS.db.collection('Picture').get().then(docs => {
+      docs.forEach(doc => {
+        this.Pictures.push(doc.data())
+      })
+      console.log(this.Pictures);
+    })
      
     // let userRef = this.FS.db.collection('User')
     // userRef.add({
@@ -56,6 +64,7 @@ export class UploadComponent implements OnInit {
  
   }
   onSubmit(){
+    
     const FileUpload = this.fileToUpload
     let form = this.registerForm
     const pictureRef = this.FS.db.collection('Picture');
@@ -80,6 +89,7 @@ export class UploadComponent implements OnInit {
       
     });
   });
+  
   }
 
   handleFileInput(files: FileList){ //This function use to set the file you want to upload. When you change a picture, this function do the same again.
