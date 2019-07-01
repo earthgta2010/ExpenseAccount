@@ -1,3 +1,15 @@
+commit 824d19b1114ff61bc1808c821b4bf4e1baf4e4d3
+Author: earthgta2010 <earthgta2010@gmail.com>
+Date:   Mon Jul 1 15:35:46 2019 +0700
+
+    test log
+
+commit a5ad05572d657b5944adabda28c418af67de57d8
+Author: earthgta2010 <earthgta2010@gmail.com>
+Date:   Mon Jul 1 15:35:07 2019 +0700
+
+    Create log.txt
+
 commit 84d7775ca90fc8bb43ee1a5714c6581b6ec2ce5d
 Author: earthgta2010 <earthgta2010@gmail.com>
 Date:   Mon Jul 1 15:33:33 2019 +0700
