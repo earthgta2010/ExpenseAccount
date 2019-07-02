@@ -5,10 +5,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { UploadComponent } from './Upload/Upload.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+
 
 
 const appRoutes: Routes = [
   { path: 'Upload', component: UploadComponent },
+  { path: 'Dashboard', component: DashboardComponent },
   
 ];
 
@@ -16,6 +19,7 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     UploadComponent,
+    DashboardComponent,
   ],
   imports: [
     BrowserModule,
